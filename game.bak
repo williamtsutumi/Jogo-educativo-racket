@@ -1,0 +1,113 @@
+#lang racket
+(require rackunit)
+(require rackunit/text-ui)
+(require "user-input-helper.rkt")
+
+
+(define quantidade-de-partes 3)
+(define primeira-parte 1)
+
+
+
+; Retorna o enunciado da parte 1 do jogo
+(define statement1
+  "statement1")
+
+; Retorna o enunciado da parte 2 do jogo
+(define statement2
+  "statement2")
+
+; Retorna o enunciado da parte 3 do jogo
+(define statement3
+  "statement3")
+
+
+; Printa na saida padrao o enunciado da parte "part" do jogo
+(define (print-statement part)
+  (cond
+    [(= part 1) (displayln statement1)]
+    [(= part 2) (displayln statement2)]
+    [(= part 3) (displayln statement3)]
+  ))
+
+
+; Retorna true caso input é a resposta esperada de acordo com o statement1
+(define (check-input1 input)
+   (and (list? input)
+       (= (length input) 7)
+       (= (apply + (cdr input)) 30)))
+
+
+; Retorna true caso input é a resposta esperada de acordo com o statement2
+(define (check-input2 input)
+  #t)
+
+
+; Retorna true caso input é a resposta esperada de acordo com o statement3
+(define (check-input3 input)
+  #t)
+
+
+; Le da entrada padrao e retorna true se o usuário acertou a resposta
+; do enunciado da parte "part", retorna false caso contrario.
+(define (parse-input part)
+  (define in (read))
+  (cond
+    [(= part 1) (check-input1 in)]
+    [(= part 2) (check-input2 in)]
+    [(= part 3) (check-input3 in)]
+  ))
+
+
+; Executa a parte "part" do jogo.
+; Retorna true caso o usuário acertou a resposta,
+; caso contário, retorna false.
+(define (execute part)
+  (print-statement part)
+  (parse-input part))
+
+
+; Executa todas as partes do jogo a partir de 'part'
+(define (run-program2 part)
+  (if (> part quantidade-de-partes)
+      (displayln "Parabains")
+      
+      (let ([result (execute part)])
+        (if result
+            (begin
+              (display "Resposta correta! Parabéns!\n")
+              (run-program2 (add1 part)))
+            (begin
+              (display "Resposta incorreta. Tente novamente.\n")
+              (run-program2 part))))))
+
+
+; Executa todas as parte do jogo.
+(define run-program
+  (run-program2 primeira-parte))
+
+
+(define all-tests
+  (test-suite "parte1"
+              (check-equal? (check-input1 '(+ 5 5 5 5 5 5)) #t)
+              (check-equal? (check-input1 '(+ 5 7 3 5 6 4)) #t)
+              (check-equal? (check-input1 '(5 5 5 5 5 5)) #f)
+              (check-equal? (check-input1 '(5 5 5 5 5 4 1)) #f)
+              (check-equal? (check-input1 '()) #f)
+              (check-equal? (check-input1 '(+ 10)) #f)
+
+  #|
+  (test-suite "parte2"
+  (check-equal? "2"))
+
+  (test-suite "parte3"
+  (check-equal? "3"))
+  |#
+    ))
+
+(define (execute-tests . tests)
+    (run-tests (test-suite "parte1" tests)))
+
+
+(execute-tests all-tests)
+(run-program)

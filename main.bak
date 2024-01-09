@@ -1,0 +1,95 @@
+#lang racket
+(require rackunit)
+(require rackunit/text-ui)
+
+
+(define quantidade-de-partes 3)
+
+
+; Retorna o enunciado da parte 1 do jogo
+(define statement1
+  "hi mom")
+
+; Retorna o enunciado da parte 2 do jogo
+(define statement2
+  "hi ma")
+
+; Retorna o enunciado da parte 3 do jogo
+(define statement3
+  "hi mam")
+
+; Printa na saida padrao o enunciado da parte "part" do jogo
+(define (print-statement part)
+  (cond
+    [(= part 1) (displayln statement1)]
+    [(= part 2) (displayln statement2)]
+    [(= part 3) (displayln statement3)]
+  ))
+
+
+; Retorna true caso input é a resposta esperada de acordo com o statement1
+(define (check-input1 input)
+  
+   (and (list? input)
+       (= (length input) 7)
+       (= (apply + (cdr input)) 30)))
+
+; Retorna true caso input é a resposta esperada de acordo com o statement2
+(define (check-input2 input)
+  #t)
+
+; Retorna true caso input é a resposta esperada de acordo com o statement3
+(define (check-input3 input)
+  #t)
+
+
+; Le da entrada padrao e retorna true se o usuário acertou a resposta
+; do enunciado da parte "part", retorna false caso contrario.
+(define (parse-input part)
+  (define in (read-line))
+  (cond
+    [(= part 1) (check-input1 in)]
+    [(= part 2) (check-input2 in)]
+    [(= part 3) (check-input3 in)]
+  ))
+
+#|
+(define (tests input)
+  (test-suite "parte1"
+  (check-equal? input "1"))
+
+  (test-suite "parte2"
+  (check-equal? input "2"))
+
+  (test-suite "parte3"
+  (check-equal? input "3"))
+)
+|#
+
+; Executa a parte "part" do jogo.
+; Retorna true caso o usuário acertou a resposta,
+; caso contário, retorna false.
+(define (execute part)
+  (print-statement part)
+  (parse-input part))
+
+
+
+; Executa todas as partes do jogo a partir de 'part', sendo 1 a primeira parte
+(define (run-program2 part)
+  (if (> part quantidade-de-partes)
+      (displayln "Parabains")
+      ((if (execute part)
+        (begin
+          (displayln "Correto. Avancando para a proxima fase...")
+          (run-program2 (add1 part)))
+        (begin
+          (displayln "Incorreto. Tente novamente")
+          (run-program2 part))))))
+
+; Executa todas as parte do jogo.
+(define run-program
+  (run-program2 1))
+  
+  
+(run-program)
