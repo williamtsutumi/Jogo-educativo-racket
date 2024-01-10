@@ -16,7 +16,7 @@
 (define (compile-and-run user-code)
   (let ([compiled-code (compile-user-code user-code)])
   (if compiled-code
-      (add 2 3)
+      (apply compiled-code 2)
       (displayln "Invalid code input"))))
 
 (compile-and-run '(define (add a b) (+ a b)))
