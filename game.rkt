@@ -13,18 +13,18 @@
   (list
    "Ao chegar em uma sala o sátiro(que é o seu melhor amigo grover) te diz\n- Olha é isso que ta aparecendo faz tempo. 'Nós sabemos que roubastes o raio de Zeus Percy Jackson filho de Poseidon. Entregue-o nessas coordenadas: 37.8102° N 22.     ° E Como a ultima coordenada foi cortada precisamos achar uma aproximação de onde poderia ser, achando os numeros perdidos\nPara ajuda-los e encontrar a coordenada mais proxima possivel responda o seguinte desafio.\nFaça a soma de uma sequência de seis números de 1 dígito para obter 30.\n"
    "Após conseguir a localização você, seu melhor amigo grover (o sátiro), e annabeth, filha de atena, partem em uma jornada para que possam encontrar o raio e devolvê-lo para os deuses. Acreditando que o raio esteja com hades, o deus do submundo, vocês vão em busca da entrada do submundo, porem são avisados de que antes teriam que encontrar as pérolas mágicas pois uma vez no submundo, conseguirão sair de la apenas com tais perolas. Luke, um amigo do acamamento lhe entrega um escudo, e o mapa de onde podem encontrar as perolas, além disso você também carrega consigo uma caneca mágica que se transforma em uma espada. A primeira perola está localizada em uma floricultura, o que parece ser muito facil para algo mágico.\n\nAo chegarem la voces percebem que tal floricultura é tambem onde se encontra medusa e ela é quem protege a perola. Após muita luta e dificuldades vocês derrotam a medusa e se deparam com a perola protegida em uma caixa magica e para abri-la vocês têm que responder corretamente a seguinte questão\nDesafio 1: O que representa o primeiro elemento de uma expressão simbólica em Racket?\nA) Um operando\nB) Uma função ou operador\nC) Um comentário\n"
-   "Desafio 2: Qual é a principal vantagem de utilizar macros em Racket?\nA) Redução de erros de sintaxe\nB)  Possibilidade de criar novas construções de linguagem\nC) Melhoria na eficiência de execução\n"
-   "Desafio 3: Em Racket, por que as estruturas de dados são geralmente imutáveis por padrão?\nA) Para aumentar a complexidade do código\nB)  Para facilitar a clareza do código e evitar efeitos colaterais inesperados\nC) Para melhorar o desempenho da execução\n"
-   "Desafio 4: Considere a seguinte lista em Racket: (define minha-lista '(1 2 3 4 5)). Como pode ser adicionado o numero 6 no comeco dessa lista?\nA) (append minha-lista 6)\nB)  (cons 6 minha-lista)\nC) (add-final minha-lista 6)\n"
+   "Então depois disso seguem para o proximo local do mapa que seria um cassino. Chegando no cassino, você e seus amigos são muito bem recebidos(até demais) e são entregues flores, como biscoitinhos para vocês comerem, todos experimentam e acham muito gostosos.\nDepois de um tempo só aproveitando o cassino e tudo nele e comendo as flores você escuta uma voz em sua cabeça dizendo\n- Percy pare de comer essas flores elas estão te drogando e fazendo você perder a noção do tempo.\nAo ouvir isso você acredita ser seu pai, poseidon, falando te avisando sobre os perigos do local e sendo assim para de comer os biscoitos. Ao parar é perceptível que eles oferecem a todo momento esses biscoitos e voce vai atrás de seus amigos para q eles parem de comer também e voltem para a realidade.\n Voltando para a realidade voces lembram que este é o outro local em que existe uma perola escondida, correndo procurando por todo o local voces encontram uma porta com um desafio.\nDesafio: Qual é a principal vantagem de utilizar macros em Racket?\nA) Redução de erros de sintaxe\nB)  Possibilidade de criar novas construções de linguagem\nC) Melhoria na eficiência de execução\n"
+   "Desafio: Em Racket, por que as estruturas de dados são geralmente imutáveis por padrão?\nA) Para aumentar a complexidade do código\nB)  Para facilitar a clareza do código e evitar efeitos colaterais inesperados\nC) Para melhorar o desempenho da execução\n"
+   "Desafio: Considere a seguinte lista em Racket: (define minha-lista '(1 2 3 4 5)). Como pode ser adicionado o numero 6 no comeco dessa lista?\nA) (append minha-lista 6)\nB)  (cons 6 minha-lista)\nC) (add-final minha-lista 6)\n"
    ))
 
 (define mensagens-questao-correta
   (list
-   "\nAcertou questao 1\n\n"
-   "\nAcertou questao 2\n\n"
-   "\nAcertou questao 3\n\n"
-   "\nAcertou questao 4\n\n"
-   "\nAcertou questao 5\n\n"
+   "\nVoce acertou, Parabens! O operador + pode ser utilizado com um numero variado de operandos\n\n"
+   "\nVoce acertou, Parabens! O racket utiliza a notacao prefixada\n\n"
+   "\nVoce acertou, Parabens! Macros sao uma abstracao de alto nivel, permitindo estender a linguagem\n\n"
+   "\nVoce acertou, Parabens! Imutabilidade nao gera efeitos colaterais, tornando o codigo praticamento sem efeitos inesperados\n\n"
+   "\nVoce acertou, Parabens!\n\n"
    ))
 
 (define dicas
@@ -34,14 +34,16 @@
          "Separe os elementos a serem somados por um espaco\n"
          "A linguagem reconhecera a soma dos elementos apenas se houver um parenteses indicando o inicio e fim da soma\n")
    
-   (list "Lembre-se que a linguagem Racket utiliza a notacao prefixada")
+   (list "Lembre-se que a linguagem Racket utiliza a notacao prefixada"
+         "Na notacao prefixada, os operandos aparecem apos o operador")
    
-   (list "Ops! A principal vantagem de macros em Racket é a possibilidade de criar novas construções de linguagem.\n")
+   (list "Imagine macros como uma forma de complementar o compilador\n")
    
    (list "Em linguagens nao funcionais as mudancas de estado sao um grandes causadores de erros no codigo.\n"
          "O paradigma funcional tenta resolver esse problema.\n")
    
-   (list "Voce pode criar uma nova lista para realizar esta acao.\n")
+   (list "Voce pode criar uma nova lista para realizar esta acao.\n"
+         "Utilize o operador cons")
    ))
 
 
