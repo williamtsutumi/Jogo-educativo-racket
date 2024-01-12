@@ -3,7 +3,7 @@
 (require rackunit/text-ui)
 
 
-(define quantidade-de-partes 6)
+(define quantidade-de-partes 5)
 (define primeira-parte 1)
 
 (define contexto-geral
@@ -12,26 +12,36 @@
 (define enunciados
   (list
    "Ao chegar em uma sala o sátiro(que é o seu melhor amigo grover) te diz\n- Olha é isso que ta aparecendo faz tempo. 'Nós sabemos que roubastes o raio de Zeus Percy Jackson filho de Poseidon. Entregue-o nessas coordenadas: 37.8102° N 22.     ° E Como a ultima coordenada foi cortada precisamos achar uma aproximação de onde poderia ser, achando os numeros perdidos\nPara ajuda-los e encontrar a coordenada mais proxima possivel responda o seguinte desafio.\nFaça a soma de uma sequência de seis números de 1 dígito para obter 30.\n"
-   "Após conseguir a localização você, seu melhor amigo grover (o sátiro), e annabeth, filha de atena, partem em uma jornada para que possam encontrar o raio e devolvê-lo para os deuses. Acreditando que o raio esteja com hades, o deus do submundo, vocês vão em busca da entrada do submundo, porem são avisados de que antes teriam que encontrar as pérolas mágicas pois uma vez no submundo, conseguirão sair de la apenas com tais perolas. Luke, um amigo do acamamento lhe entrega um escudo, e o mapa de onde podem encontrar as perolas, além disso você também carrega consigo uma caneca mágica que se transforma em uma espada. A primeira perola está localizada em uma floricultura, o que parece ser muito facil para algo mágico.\n\nAo chegarem la voces percebem que tal floricultura é tambem onde se encontra medusa e ela é quem protege a perola. Após muita luta e dificuldades vocês derrotam a medusa e se deparam com a perola protegida em uma caixa magica e para abri-la vocês têm que responder corretamente a seguinte questão\n"
-   "Desafio 1: O que representa o primeiro elemento de uma expressão simbólica em Racket?\nA) Um operando\nB) Uma função ou operador\nC) Um comentário\n"
+   "Após conseguir a localização você, seu melhor amigo grover (o sátiro), e annabeth, filha de atena, partem em uma jornada para que possam encontrar o raio e devolvê-lo para os deuses. Acreditando que o raio esteja com hades, o deus do submundo, vocês vão em busca da entrada do submundo, porem são avisados de que antes teriam que encontrar as pérolas mágicas pois uma vez no submundo, conseguirão sair de la apenas com tais perolas. Luke, um amigo do acamamento lhe entrega um escudo, e o mapa de onde podem encontrar as perolas, além disso você também carrega consigo uma caneca mágica que se transforma em uma espada. A primeira perola está localizada em uma floricultura, o que parece ser muito facil para algo mágico.\n\nAo chegarem la voces percebem que tal floricultura é tambem onde se encontra medusa e ela é quem protege a perola. Após muita luta e dificuldades vocês derrotam a medusa e se deparam com a perola protegida em uma caixa magica e para abri-la vocês têm que responder corretamente a seguinte questão\nDesafio 1: O que representa o primeiro elemento de uma expressão simbólica em Racket?\nA) Um operando\nB) Uma função ou operador\nC) Um comentário\n"
    "Desafio 2: Qual é a principal vantagem de utilizar macros em Racket?\nA) Redução de erros de sintaxe\nB)  Possibilidade de criar novas construções de linguagem\nC) Melhoria na eficiência de execução\n"
    "Desafio 3: Em Racket, por que as estruturas de dados são geralmente imutáveis por padrão?\nA) Para aumentar a complexidade do código\nB)  Para facilitar a clareza do código e evitar efeitos colaterais inesperados\nC) Para melhorar o desempenho da execução\n"
-   "Desafio 4: Considere a seguinte lista em Racket: (define minha-lista '(1 2 3 4 5))\nA) (append minha-lista 6)\nB)  (cons 6 minha-lista)\nC) (add-final minha-lista 6)\n"
+   "Desafio 4: Considere a seguinte lista em Racket: (define minha-lista '(1 2 3 4 5)). Como pode ser adicionado o numero 6 no comeco dessa lista?\nA) (append minha-lista 6)\nB)  (cons 6 minha-lista)\nC) (add-final minha-lista 6)\n"
+   ))
+
+(define mensagens-questao-correta
+  (list
+   "\nAcertou questao 1\n\n"
+   "\nAcertou questao 2\n\n"
+   "\nAcertou questao 3\n\n"
+   "\nAcertou questao 4\n\n"
+   "\nAcertou questao 5\n\n"
    ))
 
 (define dicas
   (list
    
-   (list "Dica 1-1"
-         "Dica 1-2"
-         "Dica 1-3")
+   (list "Para realizar uma soma, utilize o operador +\n"
+         "Separe os elementos a serem somados por um espaco\n"
+         "A linguagem reconhecera a soma dos elementos apenas se houver um parenteses indicando o inicio e fim da soma\n")
    
-   (list "Dica 2-1"
-         "Dica 2-2")
-   (list "O primeiro elemento de uma expressão simbólica em Racket é uma função ou operador.\n")
+   (list "Lembre-se que a linguagem Racket utiliza a notacao prefixada")
+   
    (list "Ops! A principal vantagem de macros em Racket é a possibilidade de criar novas construções de linguagem.\n")
-   (list "Incorreto. Em Racket, a imutabilidade padrão das estruturas de dados visa manter a clareza do código.\n")
-   (list "Ops! A maneira correta de adicionar o número 6 ao final da lista em Racket é usando (cons 6 minha-lista).\n")
+   
+   (list "Em linguagens nao funcionais as mudancas de estado sao um grandes causadores de erros no codigo.\n"
+         "O paradigma funcional tenta resolver esse problema.\n")
+   
+   (list "Voce pode criar uma nova lista para realizar esta acao.\n")
    ))
 
 
@@ -84,14 +94,6 @@
 (define (check-input5 input)
   (or (equal? input 'B) (equal? input 'b)))
 
-; Retorna true caso input é a resposta esperada de acordo com o enunciado 6
-(define (check-input6 input)
-  #t)
-
-; Retorna true caso input é a resposta esperada de acordo com o enunciado 7
-(define (check-input7 input)
-  #t)
-
 
 ; Le da entrada padrao e retorna true se o usuário acertou a resposta
 ; do enunciado da parte "part", retorna false caso contrario.
@@ -103,8 +105,6 @@
     [(= part 3) (check-input3 in)]
     [(= part 4) (check-input4 in)]
     [(= part 5) (check-input5 in)]
-    [(= part 6) (check-input6 in)]
-    [(= part 7) (check-input7 in)]
   ))
 
 
@@ -120,9 +120,8 @@
     (define result (parse-input part))
     
     (if result
-        (display "Resposta correta! Parabéns!\n")
+        (display (get-from-list mensagens-questao-correta (sub1 part)))
         (display "Resposta incorreta. Tente novamente.\n"))
-          
     
     result))
 
@@ -166,11 +165,29 @@
       (check-equal? (check-input1 '10) #f)
       )
     (test-suite "questoes-alternativas"
+      (check-equal? (check-input2 'b) #t)
+      (check-equal? (check-input2 'B) #t)
+      (check-equal? (check-input2 'a) #f)
+      (check-equal? (check-input2 'y) #f)
+      (check-equal? (check-input2 '(+ 5 5)) #f)
+
+      (check-equal? (check-input3 'b) #t)
+      (check-equal? (check-input3 'B) #t)
+      (check-equal? (check-input3 'a) #f)
+      (check-equal? (check-input3 'y) #f)
+      (check-equal? (check-input3 '(+ 5 5)) #f)
+
       (check-equal? (check-input4 'b) #t)
       (check-equal? (check-input4 'B) #t)
       (check-equal? (check-input4 'a) #f)
       (check-equal? (check-input4 'y) #f)
       (check-equal? (check-input4 '(+ 5 5)) #f)
+
+      (check-equal? (check-input5 'b) #t)
+      (check-equal? (check-input5 'B) #t)
+      (check-equal? (check-input5 'a) #f)
+      (check-equal? (check-input5 'y) #f)
+      (check-equal? (check-input5 '(+ 5 5)) #f)
       )
     ))
 
