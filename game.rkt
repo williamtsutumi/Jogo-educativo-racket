@@ -24,7 +24,7 @@
    "\nVoce acertou, Parabens! A caixa se abre e vocês conseguem a primeira perola\n\n"
    "\nVoce acertou, Parabens! A porta destranca e ao abri-la é possivel ver a segunda perola\n\n"
    "\nVoce acertou, Parabens! O domo desaparece e voce consegue pegar a terceira e ultima perola e desce da estátua\n\n"
-   "\nVoce acertou, Parabens! Aquela imensa porta se abre e uma luz muito forte sai de la de dentro.\n\nAo entrar pela porta voce vê o grande olimpo e corre pois o tempo para entregar o raio está curto. Ao entrar no olimpo, você vê Zeus, Poseidon e outros deuses discutindo ja ansiosos por causa do horario e é perceptível que você é do tamanho de uma formiga perto dos deles. Finalmente, você entrega o raio e fica feliz ao ver seu pai, Zeus te agradece e vai em sua direção para enconstar em sua cabeça, você fecha os olhos. Ao abri-los percebe que está em sua cadeira, no seu quarto sentado de frente para o computador porém não esquece de toda a aventura mágica e aprendizados que viveu\n\n"
+   "\nVoce acertou, Parabens! Aquela imensa porta se abre e uma luz muito forte sai de la de dentro.\n\nAo entrar pela porta voce vê o grande olimpo e corre pois o tempo para entregar o raio está curto. Ao entrar no olimpo, você vê Zeus, Poseidon e outros deuses discutindo ja ansiosos por causa do horario e é perceptível que você é do tamanho de uma formiga perto dos deles. Finalmente, você entrega o raio e fica feliz ao ver seu pai, Zeus te agradece e vai em sua direção para enconstar em sua cabeça, você fecha os olhos. Ao abri-los percebe que está em sua cadeira, no seu quarto sentado de frente para o computador porém não esquece de toda a aventura mágica e aprendizados que viveu.\n\n"
    ))
 
 (define dicas
